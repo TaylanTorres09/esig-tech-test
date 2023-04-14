@@ -17,7 +17,7 @@ Projeto consiste em criar uma aplicação para um gerenciador de tarefas. Onde o
 
 - Para clonar o projeto: git clone https://github.com/TaylanTorres09/esig-tech-test
 - Para Executar o projeto precisasse:
-    - Java [JDK](https://www.oracle.com/java/technologies/downloads/#java17). Este projeto está usando a versão 17.
+    - Java [JDK](https://www.oracle.com/java/technologies/downloads/#java17). Este projeto está usando a versão 8.
     - Banco [MySQL](https://www.mysql.com/products/workbench/).
 
 - Como interpretador de código foi utilizado o [eclipse](https://www.eclipse.org/downloads/)

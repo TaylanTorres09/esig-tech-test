@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.EntityManager;
 
-public class GenericDAO<E> implements Serializable {
+
+
+public class GenericDAO<E> implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -14,10 +16,11 @@ public class GenericDAO<E> implements Serializable {
 		try {
 			
 			entityManager.getTransaction().begin();
-			
+		
 			entityManager.persist(e);
 			
 			entityManager.getTransaction().commit();
+			entityManager.close();
 			
 		} catch (Exception e2) {
 			entityManager.getTransaction().rollback();

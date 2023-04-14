@@ -11,17 +11,26 @@
 		<h1>Cadastrar Tarefa</h1>
 		<h:form>
 			<h:panelGrid columns="2">
-				Titulo: <h:inputText/>
-				Descrição: <h:inputTextarea/>
+				Titulo: <h:inputText value="#{taskBean.task.title}" required="true"/>
+				
+				Descrição: <h:inputTextarea value="#{taskBean.task.description}" required="true"/>
+				
 				Responsável: 
-				<h:selectOneMenu>
+				<h:selectOneMenu value="#{taskBean.task.responsable}" required="true">
 					<f:selectItem itemValue="none" itemLabel="Selecione"/>
-				</h:selectOneMenu> 
-				Prioridade:
-				<h:selectOneMenu>
-					<f:selectItem itemValue="none" itemLabel="Selecione"/>
+					<f:selectItem itemValue="Joao" itemLabel="João" />
 				</h:selectOneMenu>
-				Deadline:<h:inputText/>
+				 
+				Prioridade:
+				<h:selectOneMenu value="#{taskBean.task.priority}" required="true">
+					<f:selectItem itemValue="none" itemLabel="Selecione"/>
+					<f:selectItem itemValue="alta" itemLabel="Alta"></f:selectItem>
+				</h:selectOneMenu>
+				
+				
+				Deadline:<h:inputText value="#{taskBean.task.deadline}" required="true"/>
+				
+				<h:commandButton value="Cadastrar" action="#{taskBean.create}"/>
 			</h:panelGrid>
 		</h:form>
 	</h:body>

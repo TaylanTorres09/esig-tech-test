@@ -2,29 +2,27 @@ package br.com.esig.bean;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 import br.com.esig.models.TaskModel;
 import br.com.esig.service.TaskService;
 
 
-@Named("taskBean")
 @RequestScoped
+@ManagedBean(name = "taskBean")
 public class TaskBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Inject
-	private TaskModel task;
+	private TaskModel task = new TaskModel();
 	
-	@Inject
-	private TaskService service;
-	
+	private TaskService service = new TaskService();
+
 	public String create() {
+
 		try {
-			service.create(task);
+//			service.create(task);
 			task = new TaskModel();
 			
 			return "";
@@ -41,5 +39,15 @@ public class TaskBean implements Serializable {
 	public void setTask(TaskModel task) {
 		this.task = task;
 	}
+
+	public TaskService getService() {
+		return service;
+	}
+
+	public void setService(TaskService service) {
+		this.service = service;
+	}
+	
+	
 
 }
